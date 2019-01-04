@@ -1,4 +1,9 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, render_template, Response, json
+
+
+#https://stackoverflow.com/questions/11622020/d3-json-request-getting-xmlhttprequest-error-origin-null-is-not-allowed-by-acce
+#https://stackoverflow.com/questions/13081532/return-json-response-from-flask-view
+
 
 census = [
     {
@@ -50,16 +55,26 @@ app = Flask(__name__)
 # Flask Routes
 #################################################
 
-@app.route("/census")
+
+@app.route('/summary')
+def summary():
+    data = living_cost
+    response = app.response_class(
+        response=json.dumps(data),
+        status=200,
+        mimetype='application/json'
+    )
+    return response
+
+@app.route('/census')
 def census_ep():
-
-    return jsonify(census)
-
-
-@app.route("/col")
-def col():
-
-    return jsonify(living_cost)
+    data = census
+    response = app.response_class(
+        response=json.dumps(data),
+        status=200,
+        mimetype='application/json'
+    )
+    return response
 
 
 @app.route("/")
@@ -67,6 +82,11 @@ def welcome():
     return (
         f"Welcome to the SteamGraph API!<br/>"
     )
+
+@app.route('/web')
+def webprint():
+    return render_template('index.html') 
+
 
 
 if __name__ == "__main__":
