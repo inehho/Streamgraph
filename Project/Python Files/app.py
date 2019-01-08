@@ -1,49 +1,51 @@
 from flask import Flask, jsonify, render_template, Response, json
+from sqlalchemy import create_engine
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
 
 
 #https://stackoverflow.com/questions/11622020/d3-json-request-getting-xmlhttprequest-error-origin-null-is-not-allowed-by-acce
 #https://stackoverflow.com/questions/13081532/return-json-response-from-flask-view
 
 
-census = [
-    {
-        "Cities": {
-            # Brooklym
-            "Autauga": {"income": "61,838",
-                        "gender": {"Men": "940", "Women": "1008"},
-                        "Race": {"White": "87.4", "Hispanic": ".9", "Black": "7.7"},
-                        "job": {"professional": "34.7", "service": "17", "office": "21.3", "construction": "11.9", "production": "15.2"},
-                        "work": {"private": "77.1", "public": "18.3", "self-employed": "4.6", "family-work": "0.0"}},
+engine = create_engine('mysql+pymysql://localhost:3306/streamgraph?user=root', echo=True)
+Base = declarative_base(engine)
 
-            # Chicago
-            "Calhoun": {"income": "35,740",
-                        "gender": {"Men": "1691", "Women": "1663"},
-                        "Race": {"White": "71", "Hispanic": "1", "Black": "28"},
-                        "job": {"professional": "18.3", "service": "10.9", "office": "33.2", "construction": "11.3", "production": "26.3"},
-                        "work": {"private": "79.7", "public": "14.7", "self-employed": "5.6", "family-work": "0.0"}}
-        }
 
-    }
-]
+class NonOrmTable(Base):
+    """
+    eg. fields: id, title
+    """
+    __tablename__ = 'living_cost'
+    __table_args__ = {'autoload': True}
 
-living_cost = [
-    {
-        "Cities": {
-            "Brooklyn": {
-                "cost_of_living": "90.31",
-                "rent_index": "81.02",
-                "groceries_index": "83.16",
-                "purchase_power": "87.05"
-            },
-            "Chicago": {
-                "cost_of_living": "77.33",
-                "rent_index": "55.53",
-                "groceries_index": "70.69",
-                "purchase_power": "133.7"
-            }
-        }
-    }
-]
+
+def loadSession():
+    """"""
+    metadata = Base.metadata
+    Session = sessionmaker(bind=engine)
+    session = Session()
+    return session
+
+
+def getData():
+    session = loadSession()
+    #res = session.query(NonOrmTable).all()
+    res = (session.query(NonOrmTable)
+    .filter(NonOrmTable.Country == ' United States')
+    .all())
+    li = []
+    for x in range(10):
+        dic = {"city": res[x].City, "cost_of_living": str(res[x].CostofLivingIndex),
+              "rent_index": str(res[x].RentIndex), "groceries_index": str(res[x].GroceriesIndex),
+              "purchasing_power": str(res[x].LocalPurchasingPowerIndex)}
+        li.append(dic)        
+        
+    return (li)
+
+
+
+
 
 #################################################
 # Flask Setup
@@ -56,19 +58,19 @@ app = Flask(__name__)
 #################################################
 
 
-@app.route('/summary')
-def summary():
-    data = living_cost
-    response = app.response_class(
-        response=json.dumps(data),
-        status=200,
-        mimetype='application/json'
-    )
-    return response
+# @app.route('/summary')
+# def summary():
+#     data = living_cost
+#     response = app.response_class(
+#         response=json.dumps(data),
+#         status=200,
+#         mimetype='application/json'
+#     )
+#     return response
 
 @app.route('/census')
 def census_ep():
-    data = census
+    data = getData()
     response = app.response_class(
         response=json.dumps(data),
         status=200,
