@@ -1,5 +1,28 @@
 const CHART = document.getElementById("graphTwo");
 console.log(CHART);
+
+var census_url = "http://localhost:5000/census";
+var living_url = "http://localhost:5000/summary"
+
+
+d3.json(census_url, function(error, testing) {
+    console.log(testing);
+
+    
+    var city_name = [];
+
+    for(var i=0; i<testing.length; i++) {
+        var location=testing[i].city;
+
+        if(location){
+            city_name.push(location.city);
+        }
+        console.log(city_name);
+
+    }
+
+});
+
 let graphTwo = new Chart(CHART, {
     type: 'line',
     data: {
