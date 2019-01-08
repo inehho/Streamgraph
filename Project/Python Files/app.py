@@ -1,10 +1,14 @@
 from flask import Flask, jsonify, render_template, Response, json
+from sqlalchemy import create_engine
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
 
 
 #https://stackoverflow.com/questions/11622020/d3-json-request-getting-xmlhttprequest-error-origin-null-is-not-allowed-by-acce
 #https://stackoverflow.com/questions/13081532/return-json-response-from-flask-view
 
 
+<<<<<<< HEAD
 census = [
             {
                 "income": "68211",
@@ -59,6 +63,46 @@ census = [
                 "purchase_power": "87.05"
             }
 ]
+=======
+engine = create_engine('mysql+pymysql://localhost:3306/streamgraph?user=root', echo=True)
+Base = declarative_base(engine)
+
+
+class NonOrmTable(Base):
+    """
+    eg. fields: id, title
+    """
+    __tablename__ = 'living_cost'
+    __table_args__ = {'autoload': True}
+
+
+def loadSession():
+    """"""
+    metadata = Base.metadata
+    Session = sessionmaker(bind=engine)
+    session = Session()
+    return session
+
+
+def getData():
+    session = loadSession()
+    #res = session.query(NonOrmTable).all()
+    res = (session.query(NonOrmTable)
+    .filter(NonOrmTable.Country == ' United States')
+    .all())
+    li = []
+    for x in range(10):
+        dic = {"city": res[x].City, "cost_of_living": str(res[x].CostofLivingIndex),
+              "rent_index": str(res[x].RentIndex), "groceries_index": str(res[x].GroceriesIndex),
+              "purchasing_power": str(res[x].LocalPurchasingPowerIndex)}
+        li.append(dic)        
+        
+    return (li)
+
+
+
+
+>>>>>>> c98855ca3096e1df67b261a4f6aa36e179d3f016
 
 # living_cost = [
 #     {
@@ -90,19 +134,19 @@ app = Flask(__name__)
 #################################################
 
 
-@app.route('/summary')
-def summary():
-    data = living_cost
-    response = app.response_class(
-        response=json.dumps(data),
-        status=200,
-        mimetype='application/json'
-    )
-    return response
+# @app.route('/summary')
+# def summary():
+#     data = living_cost
+#     response = app.response_class(
+#         response=json.dumps(data),
+#         status=200,
+#         mimetype='application/json'
+#     )
+#     return response
 
 @app.route('/census')
 def census_ep():
-    data = census
+    data = getData()
     response = app.response_class(
         response=json.dumps(data),
         status=200,
