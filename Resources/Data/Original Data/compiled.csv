@@ -1,0 +1,109 @@
+Rank,City,County,State,Country,RentIndex,GroceriesIndex,LocalPurchasingPowerIndex,Median,Lat,Lng
+1,Albany,Alameda County,CA,United States,31.01,77.5,108.77,300000,37.8906499,-122.3181164
+36,Albuquerque,Bernalillo County,NM,United States,27.29,64.42,128.27,300000,34.979469,-106.797939
+95,Anchorage,Matanuska-Susitna Borough,AK,United States,39.45,96.74,138.38,84804,61.355597,-150.16935
+120,Ann Arbor,Alcona County,MI,United States,47.59,60.7,128.99,58461,42.2850587,-83.7507189
+136,Arlington,Calhoun County,GA,United States,30.98,64.58,141.64,18746,31.436823,-84.729732
+205,Asheville,Alamance County,NC,United States,37.19,71.47,104.81,32415,35.5904439,-82.5453771
+215,Atlanta,DeKalb County,GA,United States,46.89,66.94,150.38,70197,33.875954,-84.334763
+279,Austin,Adams County,IN,United States,50.35,65.81,151.25,25875,38.7495378,-85.8141425
+364,Bakersfield,Kern County,CA,United States,28.95,63.16,151.58,56986,35.321213,-119.018291
+402,Baltimore,Baltimore County,MD,United States,42.89,68.71,127.77,63290,39.364165,-76.517585
+544,Bellevue,Adair County,IA,United States,61.2,78.24,186,47674,42.2070191,-90.4595153
+568,Bellingham,Barnstable County,MA,United States,34.17,68.93,114.33,300000,42.0335072,-71.511925
+580,Berkeley,Alameda County,CA,United States,76.39,81.99,119.03,133190,37.8911093,-122.2813663
+594,Birmingham,Autauga County,AL,United States,34.03,69.4,107.87,74570,33.4007267,-86.6925733
+633,Boise,Ada County,ID,United States,30.85,50.93,120.44,47698,43.6066784,-116.180455
+651,Boston,Adair County,KY,United States,76.09,75.71,124.57,60816,37.7729025,-85.6215665
+669,Boulder,Adams County,CO,United States,53.54,76.79,112.76,300000,40.0299035,-105.2706095
+681,Brooklyn,Fairfield County,CT,United States,81.02,83.16,87.05,100367,41.7872432,-71.9574014
+968,Buffalo,Aitkin County,MN,United States,29.3,62.31,111.16,61578,45.2115714,-93.9153733
+1018,Burlington,Adams County,CO,United States,41.81,73.17,76.97,46853,39.3072974,-102.2113119
+1051,Charleston,Adams County,IL,United States,46.12,90.86,106.06,75693,39.4700387,-88.0932166
+1082,Charlotte,Alcona County,MI,United States,41.65,69.21,142.25,66380,42.54767,-84.8738123
+1150,Chattanooga,Comanche County,OK,United States,29.58,57.19,124.02,300000,34.460281,-98.579362
+1172,Chicago,Cook County,IL,United States,55.53,70.69,133.7,48321,41.837551,-87.681844
+1470,Cincinnati,Hamilton County,OH,United States,31.03,52.4,137.31,105537,39.250757,-84.426464
+1555,Cleveland,Blount County,AL,United States,28.24,62.06,105.12,44609,33.992756,-86.500325
+1640,Columbia,Appling County,GA,United States,27.73,65.6,124.84,24701,31.1995947,-84.9937344
+1701,Columbus,Muscogee,GA,United States,36.92,58.94,128.77,41908,32.510197,-84.874946
+1815,Dallas,Appling County,GA,United States,43.15,58.5,153.42,55339,33.9231612,-84.8560783
+1946,Dayton,Franklin County,ID,United States,21.97,62.6,91.21,43033,42.111246,-111.984615
+1994,Denver,Arapahoe County,CO,United States,54.09,67.92,130.34,109574,39.667776,-104.921728
+2070,Des Moines,Warren County,IA,United States,33.57,57.09,128.68,300000,41.57259,-93.610243
+2099,Detroit,Wayne County,MI,United States,34.22,56.21,97.41,25417,42.383037,-83.102237
+2210,El Paso,Anderson County,TX,United States,22.16,54.07,131.7,25472,31.8864366,-106.4288286
+2274,Eugene,Baker County,OR,United States,30.44,78.36,99.5,24736,43.9927124,-123.2152039
+2291,Everett,Barnstable County,MA,United States,43.44,72.61,119.38,300000,42.4192406,-71.0390042
+2307,Fayetteville,Arkansas County,AR,United States,25.9,61.15,109.58,43226,36.124794,-94.1338947
+2339,Fort Myers,Lee County,FL,United States,33.45,68.78,104.54,18545,26.578228,-81.861453
+2360,Fort Wayne,Adams County,IN,United States,21.74,70.07,124.37,42253,41.0966773,-85.1622524
+2391,Fort Worth,Tarrant County,TX,United States,35.53,56.86,140.43,85973,32.822072,-97.489154
+2463,Fresno,Fresno County,CA,United States,30.12,54.68,120.12,18417,36.984012,-119.70806
+2511,Gainesville,Alachua County,FL,United States,29.02,60.52,106.34,31371,29.6304086,-82.3492862
+2540,Grand Rapids,Alcona County,MI,United States,31.04,55.26,129.66,49858,43.0065784,-85.6478324
+2577,Greensboro,Hale County,AL,United States,27.34,63.03,133.53,21136,32.700968,-87.5937
+2610,Hartford,Geneva County,AL,United States,41.58,83.41,84.71,21608,31.105348,-85.691225
+2633,Honolulu,Honolulu County,HI,United States,63.96,96.32,113.58,113392,21.288485,-157.717889
+2674,Houston,Aitkin County,MN,United States,43.11,54.36,155.88,68371,43.9233397,-91.5292054
+2903,Huntsville,Autauga County,AL,United States,28.65,58.83,162.04,33659,34.7832877,-86.5893471
+2927,Indianapolis,Marion County,IN,United States,34.81,67.2,109.93,57622,39.816549,-86.320646
+3011,Irvine,Alameda County,CA,United States,65.75,73.87,135.16,66137,33.6920021,-117.7546973
+3027,Jacksonville,Autauga County,AL,United States,31.36,69,132.56,41809,33.7661796,-85.7864612
+3112,Jersey City,Atlantic County,NJ,United States,61.58,86.08,120.46,20114,40.7532468,-74.0469179
+3136,Kansas City,Allen County,KS,United States,30.53,58.43,138.6,36522,39.1360745,-94.6809514
+3215,Knoxville,Knox County,IL,United States,28.75,59.45,116.61,49452,40.906919,-90.285693
+3249,Las Vegas,Churchill County,NV,United States,29.55,59.56,144.4,44734,36.0897935,-115.076107
+3382,Lexington,McLean County,IL,United States,24.86,54.5,141.91,68385,40.646936,-88.784621
+3442,Little Rock,Arkansas County,AR,United States,26.4,55.44,144.07,30565,34.7170554,-92.2729487
+3465,Long Beach,Alameda County,CA,United States,55.18,74.93,128.82,94556,33.830434,-118.2159632
+3513,Los Angeles,Los Angeles County,CA,United States,70.45,71.59,114.51,26090,33.941679,-118.301838
+3741,Louisville,Barbour County,AL,United States,26.86,53.87,123.93,19528,31.708516,-85.611039
+3841,Lubbock,Lubbock County,TX,United States,24.28,56.8,135.19,44459,33.565636,-101.886671
+3863,Madison,Autauga County,AL,United States,37.52,56.66,144.61,85287,34.6474493,-86.8534466
+3914,Memphis,Alcona County,MI,United States,26.58,59.36,125.07,72089,42.9372573,-82.8095358
+3982,Miami,Apache County,AZ,United States,57.81,67.27,89.99,38206,33.452695,-110.9371613
+4106,Milwaukee,Adams County,WI,United States,35.57,63.74,107.87,29764,43.1820632,-88.01003
+4187,Minneapolis,Aitkin County,MN,United States,46.18,68.29,133.75,49135,45.0454803,-93.3086989
+4240,Nashville,Appling County,GA,United States,49.17,64.1,136.29,40404,31.2406903,-83.2961258
+4290,New Orleans,Acadia Parish,LA,United States,41.21,67,106.74,15203,29.9235307,-90.0464711
+4356,New York,Albany County,NY,United States,100,100,100,68128,40.641524,-73.9416243
+4501,Oakland,Alameda County,CA,United States,77.14,77.54,137.74,63541,37.7408161,-122.1621741
+4562,Oklahoma City,Adair County,OK,United States,25.72,60.18,136.21,300000,35.355958,-97.6230996
+4628,Olympia,Adams County,WA,United States,40.4,60.02,135.82,54810,47.0447883,-122.8734533
+4636,Orlando,Orange County,FL,United States,38.43,68.5,130.1,36551,28.55431,-81.299455
+4683,Peoria,Apache County,AZ,United States,25.55,68.44,118.14,37353,33.6294009,-112.2828515
+4712,Philadelphia,Adams County,MS,United States,49.35,74.58,109.34,51949,32.8213105,-88.9902859
+4890,Phoenix,Apache County,AZ,United States,33.65,56.58,146.15,51503,32.8913628,-109.5331779
+5017,Pittsburgh,Allegheny County,PA,United States,38.23,71.89,114.28,49013,40.357667,-79.905397
+5108,Portland,Fairfield County,CT,United States,42.4,72.45,122.77,77114,41.5787389,-72.6337837
+5184,Raleigh,Smith County,MS,United States,36.18,71.88,155.96,33330,32.034724,-89.525732
+5223,Reno,Washoe County,NV,United States,38.03,51.96,136.81,93615,39.516172,-119.923037
+5250,Richmond,Contra Costa County,CA,United States,35.24,63.54,132.62,31359,37.965271,-122.370668
+5335,Rochester,Adams County,IL,United States,30.81,69.88,91.12,300000,39.7598226,-89.4921425
+5418,Sacramento,Sacramento County,CA,United States,44.29,69.09,145.88,49743,38.566592,-121.468632
+5484,Saint Louis,Alcona County,MI,United States,29.42,65.14,149.05,39740,43.4111733,-84.6112502
+5486,Saint Paul,Aitkin County,MN,United States,45.24,70.22,111.58,19592,44.9569236,-93.0994839
+5517,Salem,Autauga County,AL,United States,28.93,61.63,125.24,51524,32.5985333,-85.1564072
+5558,Salt Lake City,Beaver County,UT,United States,35.8,55.93,150.76,85573,40.7803333,-111.8737411
+5593,San Antonio,Bexar County,TX,United States,31.26,55.2,150.96,82298,29.599214,-98.485542
+5728,San Diego,Alameda County,CA,United States,61.06,64.11,144.91,122111,32.7530051,-117.1858954
+5832,San Francisco,Alameda County,CA,United States,106.49,101.93,125.95,82929,37.8016201,-122.4156811
+5909,San Jose,Alameda County,CA,United States,76.61,71.1,170.91,300000,37.3584848,-121.89276
+5982,Santa Barbara,Alameda County,CA,United States,68.66,67.52,124.41,300000,34.446327,-119.7788151
+5996,Santa Rosa,Alameda County,CA,United States,56.69,84.35,116.47,22157,38.3933396,-122.7012564
+6015,Seattle,Adams County,WA,United States,64.7,83.72,140,28154,47.7225472,-122.2818937
+6080,Spokane,Christian County,MO,United States,28.33,59.19,124.45,300000,36.863219,-93.305568
+6109,Springfield,Sangamon County,IL,United States,18.66,60.68,102.88,97482,39.778704,-89.683956
+6201,Syracuse,Kosciusko County,IN,United States,33.6,63.81,94.96,44768,41.420611,-85.749422
+6228,Tacoma,Pierce County,WA,United States,38.62,71.42,130.05,40623,47.173402,-122.412024
+6260,Tallahassee,Alachua County,FL,United States,26.47,71.3,128.82,39098,30.4570859,-84.2837233
+6284,Tampa,Hillsborough County,FL,United States,39.54,65.38,140.97,62089,28.070996,-82.562173
+6362,Toledo,Cumberland County,IL,United States,21.26,50.89,125.57,37389,39.272387,-88.241628
+6405,Tucson,Pima County,AZ,United States,23.63,52.48,122.68,50113,32.484902,-110.899633
+6483,Tulsa,Adair County,OK,United States,26.87,59.49,129.54,52837,36.05548,-96.0532795
+6527,Vancouver,Baker County,OR,United States,35.97,50.54,153.07,44959,45.6275145,-122.7161229
+6556,Virginia Beach,Accomack County,VA,United States,35.84,62.06,161.28,57119,36.8525795,-76.1337231
+6596,Washington,District of,DC,United States,70.28,86.63,131.53,71044,38.904103,-77.017229
+6687,West Palm Beach,Palm Beach County,FL,United States,42.16,70.55,119.13,51882,26.690963,-80.121794
+6715,Wichita,Allen County,KS,United States,23.45,57.3,135.99,51201,37.7161607,-97.3534348

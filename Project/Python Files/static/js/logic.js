@@ -1,73 +1,147 @@
-census = [
-  {
-      "income": "68211",
-      "gender": {"Men": "6817", "Women": "6099"},
-      "Race": {"White": "13.4", "Hispanic": "65.7", "Black": "16.6", "Native": "0.0", "Asian": "2.2", "Pacific": "0.0"},
-      "job": {"professional": "19.4", "service": "25.9", "office": "28.2", "construction": "13.5", "production": "13.1"},
-      "work": {"private": "77.5", "public": "11.3", "self-employed": "11.3", "family-work": "0.0"},
-      "city": "Los Angeles",
-      "cost_of_living": "77.66",
-      "rent_index": "70.45",
-      "groceries_index": "71.59",
-      "purchase_power": "114.51"
-  },
+var income_url = "http://localhost:5000/income"
 
-  {
-      "income": "35740",
-      "gender": {"Men": "1691", "Women": "1663"},
-      "Race": {"White": "71", "Hispanic": "1", "Black": "28"},
-      "job": {"professional": "18.3", "service": "10.9", "office": "33.2", "construction": "11.3", "production": "26.3"},
-      "work": {"private": "79.7", "public": "14.7", "self-employed": "5.6", "family-work": "0.0"},
-      "city": "Jacksonville",
-      "cost_of_living": "70.62",
-      "rent_index": "31.36",
-      "groceries_index": "69.0",
-      "purchase_power": "132.56"
-  },
-  
-  {
-      "income": "83391",
-      "gender": {"Men": "8910", "Women": "9025"},
-      "Race": {"White": "48.2", "Hispanic": "7.2", "Black": "12.9", "Asian": "19.8", "Pacific": "0", "Native": "0"},
-      "job": {"professional": "69.6", "service": "5.7", "office": "20.4", "construction": "1.7", "production": "2.5"},
-      "work": {"private": "86.0", "public": "12.7", "self-employed": "1.3", "family-work": "0.0"},
-      "city": "Chicago",
-      "cost_of_living": "77.33",
-      "rent_index": "55.53",
-      "groceries_index": "70.69",
-      "purchase_power": "133.7"
-      
-  },
+d3.json(income_url, function(error, response) {
+  var test = GeoJSON.parse(response, {Point:["Lat", "Lng"]});
 
-  {
-      "income": "35740",
-      "gender": {"Men": "2352", "Women": "1943"},
-      "Race": {"White": "76.2", "Hispanic": "6.6", "Black": "3.9","Native": "0.0", "Asian":"8.7", "Pacific":"0.0"},
-      "job": {"professional": "79.5", "service": "4.0", "office": "15.8", "construction": "0.3", "production": "0.5"},
-      "work": {"private": "84.9", "public": "6.7", "self-employed": "8.4", "family-work": "0.0"},
-      "city": "Brooklyn",
-      "cost_of_living": "90.31",
-      "rent_index": "81.02",
-      "groceries_index": "83.16",
-      "purchase_power": "87.05"
-  }
-]
 
-var myMap = L.map("map", {
-    center: [37.7749, -122.4194],
-    zoom: 13
-  });
-  
-L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
-    attribution: "Map data &copy; <a href='https://www.openstreetmap.org/'>OpenStreetMap</a> contributors, <a href='https://creativecommons.org/licenses/by-sa/2.0/'>CC-BY-SA</a>, Imagery © <a href='https://www.mapbox.com/'>Mapbox</a>",
+  var all_data = test.features;
+  console.log(all_data);
+
+
+  var incomeMarkers = [];
+  var powerMarkers = [];
+  var costMarkers = [];
+  var rentMarkers = [];
+  var groceriesMarkers = [];
+
+  for (var i = 0; i < all_data.length; i++) {
+
+  // Set the data location property to a variable
+    var location = all_data[i].geometry;
+    var money = all_data[i].properties;
+
+    function getColor(d) {
+      return d > 100000 ? '#bfff00' :
+              d > 85000  ? '#ffff00' :
+              d > 55000  ? "#ffbf00" :
+              d > 45000  ? "#ff8000" :
+              d > 30000  ? "#ff4000" :
+              "#ff0000";
+    }
+
+    incomeMarkers.push(
+      L.circle([location.coordinates[1], location.coordinates[0]], {
+        stroke: false,
+        fillOpacity: 0.75,
+        color: getColor(money.median),
+        fillColor: getColor(money.median),
+        radius: 10000
+      }).bindPopup("<h4>" + money.city + ", " + money.state + "</h4> <hr> <h4>Household Median Income: " + "$"+ money.median + "</h4>")
+    );
+    //   // Check for location property
+    powerMarkers.push(
+      L.circle([location.coordinates[1], location.coordinates[0]], {
+        fillOpacity: 1,
+        color: "blue",
+        fillColor: "blue",
+        radius: 2000
+      }).bindPopup("<h4>" + money.city + ", " + money.state + "</h4> <hr> <h4>Purchasing Power: " + "$"+ money.purchasing_power + "</h4>")
+    );
+
+    costMarkers.push(
+      L.circle([location.coordinates[1], location.coordinates[0]], {
+        fillOpacity: 1,
+        color: "black",
+        fillColor: "black",
+        radius: 2000
+      }).bindPopup("<h4>" + money.city + ", " + money.state + "</h4> <hr> <h4>Cost Index: " + "$"+ money.cost_index + "</h4>")
+    );
+
+    rentMarkers.push(
+      L.circle([location.coordinates[1], location.coordinates[0]], {
+        fillOpacity: 1,
+        color: "purple",
+        fillColor: "purple",
+        radius: 2000
+      }).bindPopup("<h4>" + money.city + ", " + money.state + "</h4> <hr> <h4>Rent Index: " + "$"+ money.rent_index + "</h4>")
+    );
+
+    groceriesMarkers.push(
+      L.circle([location.coordinates[1], location.coordinates[0]], {
+        fillOpacity: 1,
+        color: "brown",
+        fillColor: "brown",
+        radius: 2000
+      }).bindPopup("<h4>" + money.city + ", " + money.state + "</h4> <hr> <h4>Groceries Index: " + "$"+ money.groceries_index + "</h4>")
+    );
+  };
+
+  // Define variables for our base layers
+  var streetmap = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
+    attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
     maxZoom: 18,
     id: "mapbox.streets",
     accessToken: API_KEY
+  });
+
+  var lightmap = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
+    attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
+    maxZoom: 18,
+    id: "mapbox.light",
+    accessToken: API_KEY
+  });
+
+  var income= L.layerGroup(incomeMarkers);
+  var power = L.layerGroup(powerMarkers);
+  var cost = L.layerGroup(costMarkers);
+  var rent = L.layerGroup(rentMarkers);
+  var groceries = L.layerGroup(groceriesMarkers);
+
+  var baseMaps = {
+    "Street Map": streetmap,
+    "Light Map": lightmap
+  };
+  
+  // Create an overlay object
+  var overlayMaps = {
+    "Median Income": income,
+    "Purchasing Power": power,
+    "Cost Index" : cost,
+    "Rent Index": rent,
+    "Groceries Index": groceries
+  };
+  
+  // Define a map object
+  var myMap = L.map("map", {
+    center: [40.7128, -74.0059],
+    zoom: 5,
+    layers: [streetmap, income]
+  });
+  
+  // Pass our map layers into our layer control
+  // Add the layer control to the map
+  L.control.layers(baseMaps, overlayMaps, {
+    collapsed: false
   }).addTo(myMap);
 
-  // var census_url = "http://localhost:5000/census";
-  // var living_url = "http://localhost:5000/summary";
 
-d3.json(census, function(error, data) {
-    console.log(data);
-  });
+  var legend = L.control({position: 'bottomright'});
+
+  legend.onAdd = function (map) {
+
+  var div = L.DomUtil.create('div', 'info legend'),
+      grades = [0, 30000, 45000, 55000, 85000, 100000],
+      labels = [];
+
+  // loop through our density intervals and generate a label with a colored square for each interval
+  for (var i = 0; i < grades.length; i++) {
+      div.innerHTML +=
+          '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
+          grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
+  }
+
+    return div;
+  };
+
+  legend.addTo(myMap);
+});
