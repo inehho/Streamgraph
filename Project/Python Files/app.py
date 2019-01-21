@@ -67,28 +67,7 @@ def getIncome():
     kal = (sess.query(Income)
     .filter(Income.Country == 'United States')
     .all())
-
-    li2 = []
     
-    for x in range(10000):
-            dic = {
-                "city": kal[x].City,
-                "county":kal[x].County, 
-                "state":kal[x].State,
-                "cost_index": float(kal[x].CostofLivingIndex),
-                "rent_index": float(kal[x].RentIndex), 
-                "groceries_index": float(kal[x].GroceriesIndex),
-                "purchasing_power": float(kal[x].LocalPurchasingPowerIndex),
-                "mean":float(kal[x].Mean), 
-                "median":float(kal[x].Median), 
-                "stdev":float(kal[x].Stdev), 
-                "Lat": float(kal[x].Lat), 
-                "Lng": float(kal[x].Lng),
-            }
-            li2.append(dic)        
-    return (li2)
-    
-
     li2 = []
     
     for x in range(18600):

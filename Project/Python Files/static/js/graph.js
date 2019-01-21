@@ -17,7 +17,7 @@ var census_url = "http://localhost:5000/census"
 d3.json(census_url, function (error, data_b) {
 //    console.log(data_b.city)
    var bottom = data_b.map(function(d) { return d.city; });
-   var cost = data_b.map(function(d) { return d.cost_of_living; });
+   var cost = data_b.map(function(d) { return d.cost_index; });
    var income = data_b.map(function(d) { return d.mean; });
    var power = data_b.map(function(d) { return d.purchasing_power; });
 
@@ -100,7 +100,7 @@ function graph (bottom, cost, income,power){
                     pointHoverBorderWidth:2,
                     pointRadius: 8,
                     pointHitRadius:10,
-                    // data should be cost of living
+                    // data should be purchasing power
                     data: power,
                     yAxisID: 'y-axis-1',                }
             ]},

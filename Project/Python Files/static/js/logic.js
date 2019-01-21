@@ -35,45 +35,51 @@ d3.json(income_url, function(error, response) {
         fillOpacity: 0.75,
         color: getColor(money.median),
         fillColor: getColor(money.median),
-        radius: 10000
+        radius: 5000
       }).bindPopup("<h4>" + money.city + ", " + money.state + "</h4> <hr> <h4>Household Median Income: " + "$"+ money.median + "</h4>")
     );
+
+    if(money.cost_index === 0) {
+      continue;
+    }
+    else {
     //   // Check for location property
-    powerMarkers.push(
-      L.circle([location.coordinates[1], location.coordinates[0]], {
-        fillOpacity: 1,
-        color: "blue",
-        fillColor: "blue",
-        radius: 2000
-      }).bindPopup("<h4>" + money.city + ", " + money.state + "</h4> <hr> <h4>Purchasing Power: " + "$"+ money.purchasing_power + "</h4>")
-    );
+      powerMarkers.push(
+        L.circle([location.coordinates[1], location.coordinates[0]], {
+          fillOpacity: 1,
+          color: "blue",
+          fillColor: "blue",
+          radius: 100
+        }).bindPopup("<h4>" + money.city + ", " + money.state + "</h4> <hr> <h4>Purchasing Power: " + "$"+ money.purchasing_power + "</h4>")
+      );
 
-    costMarkers.push(
-      L.circle([location.coordinates[1], location.coordinates[0]], {
-        fillOpacity: 1,
-        color: "black",
-        fillColor: "black",
-        radius: 2000
-      }).bindPopup("<h4>" + money.city + ", " + money.state + "</h4> <hr> <h4>Cost Index: " + "$"+ money.cost_index + "</h4>")
-    );
+      costMarkers.push(
+        L.circle([location.coordinates[1], location.coordinates[0]], {
+          fillOpacity: 1,
+          color: "black",
+          fillColor: "black",
+          radius: 1000
+        }).bindPopup("<h4>" + money.city + ", " + money.state + "</h4> <hr> <h4>Cost Index: " + "$"+ money.cost_index + "</h4>")
+      );
 
-    rentMarkers.push(
-      L.circle([location.coordinates[1], location.coordinates[0]], {
-        fillOpacity: 1,
-        color: "purple",
-        fillColor: "purple",
-        radius: 2000
-      }).bindPopup("<h4>" + money.city + ", " + money.state + "</h4> <hr> <h4>Rent Index: " + "$"+ money.rent_index + "</h4>")
-    );
+      rentMarkers.push(
+        L.circle([location.coordinates[1], location.coordinates[0]], {
+          fillOpacity: 1,
+          color: "purple",
+          fillColor: "purple",
+          radius: 100
+        }).bindPopup("<h4>" + money.city + ", " + money.state + "</h4> <hr> <h4>Rent Index: " + "$"+ money.rent_index + "</h4>")
+      );
 
-    groceriesMarkers.push(
-      L.circle([location.coordinates[1], location.coordinates[0]], {
-        fillOpacity: 1,
-        color: "brown",
-        fillColor: "brown",
-        radius: 2000
-      }).bindPopup("<h4>" + money.city + ", " + money.state + "</h4> <hr> <h4>Groceries Index: " + "$"+ money.groceries_index + "</h4>")
-    );
+      groceriesMarkers.push(
+        L.circle([location.coordinates[1], location.coordinates[0]], {
+          fillOpacity: 1,
+          color: "brown",
+          fillColor: "brown",
+          radius: 100
+        }).bindPopup("<h4>" + money.city + ", " + money.state + "</h4> <hr> <h4>Groceries Index: " + "$"+ money.groceries_index + "</h4>")
+      );
+    }
   };
 
   // Define variables for our base layers
