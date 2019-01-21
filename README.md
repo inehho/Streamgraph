@@ -26,13 +26,13 @@ We used MySQL as our main database to load the .csv files so that we could load 
 <br>
 /census - JSON format of city, median income, cost index, rent index, grocerries index, etc. 
 <br>
-/income - larget datasets of /census and also contains Lat and Lng. 
+/income - largest datasets of (/census) and also contains Latitude and Longtitude. 
 <br>
-/web - Plotly graphs of purchasing power by City.
+/web - Plotly graph of purchasing power by City.
 <br>
 /canvasgraph - Chart graph of median income, purchasing power and cost index by City.
 <br>
-/map - GeoMap that contains all the data.
+/map - GeoMap graph that contains data from (/income).
 
 
 
