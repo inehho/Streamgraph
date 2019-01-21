@@ -22,10 +22,15 @@ We used MySQL as our main database to load the .csv files so that we could load 
 7. Now you should be able to run "python app.py" in your console. Feel free to change the directory for different informations. 
 
 /main - Main page of our project, from here, you can alter which path you want to go to. (below are the path examples)
+<br>
 /census - JSON format of city, median income, cost index, rent index, grocerries index, etc. 
+<br>
 /income - larget datasets of /census and also contains Lat and Lng. 
+<br>
 /web - Plotly graphs of purchasing power by City.
+<br>
 /canvasgraph - Chart graph of median income, purchasing power and cost index by City
+<br>
 /map - GeoMap that contains all the data.
 
 
