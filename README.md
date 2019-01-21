@@ -21,7 +21,7 @@ We used MySQL as our main database to load the .csv files so that we could load 
 6. Open app.py using Visual Code (Streamgraph/Project/PythonFiles/app.py) and change your password. 
 7. Now you should be able to run "python app.py" in your console. Feel free to change the directory for different informations. 
 
-Paths (Example: localhost/map)
+## Paths (Example: localhost/map)
 <br>
 /main - Main page of our project, from here, you can alter which path you want to go to. 
 <br>
