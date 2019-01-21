@@ -8,7 +8,7 @@ Then view the index.html webpage at http://localhost:5000/web
 
 # Instructions to loading the datasets into MySQL
 ***WARNING***:
-This method is only for those that have practiced using MySQL database. IF not, please refer to online installation guide and follow the guides listed below. 
+This method is only for those that have practiced using MySQL database. IF not, please refer to online installation guide and then, return and follow the guides listed below. 
 
 **Explanation**:
 We used MySQL as our main database to load the .csv files so that we could load it in JSON format. We then pull the information with JS codes, then plot GeoJSON and plotly graphs. If you want to try to loading the graphs onto your computer or localhost:5000, please follow the following instructions. 
