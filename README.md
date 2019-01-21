@@ -5,3 +5,7 @@ This is a repository for Project 2. Team work with Evan Ouimet, Leon Tan and Eri
 Its hosted on a Flask server  
 Navigate to the /Project/PythonFiles/ dir and run $python app.py  
 Then view the index.html webpage at http://localhost:5000/web  
+
+# Instructions
+In order to load the data onto your localhost:5000, please follow the following instructions. 
+
