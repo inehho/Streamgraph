@@ -67,7 +67,7 @@ def getIncome():
     kal = (sess.query(Income)
     .filter(Income.Country == 'United States')
     .all())
-    
+
     li2 = []
     
     for x in range(18600):
@@ -151,7 +151,7 @@ def welcome():
 def webprint():
     return render_template('index.html') 
 
-@app.route('/canvas1')
+@app.route('/canvasgraph')
 def canvasprint():
     return render_template('canvas.html')
 
@@ -159,9 +159,10 @@ def canvasprint():
 def geomap():
     return render_template('map.html') 
 
-@app.route('/bootstrap')
+@app.route('/main')
 def boot():
     return render_template('bootstrapp.html') 
+
 @app.route('/boot')
 def strap():
     return render_template('bootstrapp.html') 

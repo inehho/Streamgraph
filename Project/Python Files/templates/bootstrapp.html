@@ -11,23 +11,19 @@
   </head>
   <body>
     <h1 class = 'jumbotron container-fluid'>Are You Making Enough To Survive?!</h1>
+
     <div class="container-fluid">
-        <h1>Financial Health of Your City</h1>
-        <div class="row">
-          <div class="col-md-8" style="background-color:rgb(170, 173, 166)">
-            <p>After you navigate to your desired city, you can find your city's relative financial health by subtracting the Average Cost of Living from the Average Income of the residents. In order to find your own relative financial health, substitute your own income for the Average Income.*</p>
-          </div>
-          <div class="col-md-4" style="background-color:lightblue;">
-            <div class = "container-fluid">Median Income and Cost of Living by City</div>
-            <a href= "http://localhost:5000/canvas1" class= "btn btn-info" role="button">Graph</a>
-          </div>
+      <h1>Financial Health of Your City</h1>
+      <div class="row">
+        <div class="col-md-8" style="background-color: rgb(170, 173, 166);">
+          <div class = "container-fluid">After you navigate to your desired city, you can find your city's relative financial health by subtracting the Average Cost of Living from the Average Income of the residents. In order to find your own relative financial health, substitute your own income for the Average Income.*</div>
         </div>
+        <div class="plot col-md-4" style="background-color:lightblue;">
+        <p>Median Income, Cost of Living and Purchasing Power by City</p>
+        <a href= "http://localhost:5000/canvasgraph" class= "btn btn-info" role="button">Chart Graph</a>
       </div>
-
-
-
-
-
+      </div>
+    </div>
 
       <div class="container-fluid">
             <h1>Analysis of the Main Costs of Living</h1>
@@ -37,11 +33,11 @@
               </div>
               <div class="plot col-md-4" style="background-color:lightblue;">
               <p>Purchasing Power by City</p>
-              <a href= "http://localhost:5000/web" class= "btn btn-info" role="button">Graph</a>
+              <a href= "http://localhost:5000/web" class= "btn btn-info" role="button">Plotly Graph</a>
             </div>
-              
             </div>
           </div>
+
           <div class="container-fluid">
             <h1>Map Analysis of Median Income</h1>
             <div class="row">
@@ -51,16 +47,19 @@
               
               <div class="plot col-md-4" style="background-color:lightblue;">
               <p>Median Income over States</p>
-              <a href= "http://localhost:5000/map" class= "btn btn-info" role="button">Graph</a>
+              <a href= "http://localhost:5000/map" class= "btn btn-info" role="button">GeoMap</a>
             </div>
               
             </div>
-          </div>
+         
           <p>*Keep in mind the data we are showing is computed into an index format; therefore is only helpful relative to the other visualized data points.</p>
           <div class="row">
                 <h3 class="text-center"></h3>
-                  <a href= "http://localhost:5000/census" class= "btn btn-info" role="button">Raw Data!</a>
-
+                  <a href= "http://localhost:5000/census" class= "btn btn-info" role="button">Census Data</a>
+                  <br>
+                  <a href= "http://localhost:5000/income" class= "btn btn-info" role="button">Income Data</a>
+                  </div>
+                </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
