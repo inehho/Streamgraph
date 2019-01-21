@@ -19,6 +19,7 @@ We used MySQL as our main database to load the .csv files so that we could load 
 3. Once the .csv files are imported, refresh the table and run the SQL below. 
 ![](Resources/Images/Import.PNG)
 4. Next, we would "Alter" both tables and set the "Primary Key" to column "Rank". (Have to repeat twice since it is two different files)
+<br>
 ![](Resources/Images/AlterTable.PNG)
 ![](Resources/Images/PrimaryKey.PNG)
 5. Click on APPLY until the pop-up windows closes. 
