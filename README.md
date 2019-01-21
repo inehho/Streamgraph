@@ -30,7 +30,7 @@ We used MySQL as our main database to load the .csv files so that we could load 
 <br>
 /web - Plotly graphs of purchasing power by City.
 <br>
-/canvasgraph - Chart graph of median income, purchasing power and cost index by City
+/canvasgraph - Chart graph of median income, purchasing power and cost index by City.
 <br>
 /map - GeoMap that contains all the data.
 
