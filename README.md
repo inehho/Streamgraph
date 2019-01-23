@@ -1,5 +1,18 @@
 # Streamgraph
-This is a repository for Project 2. Team work with Evan Ouimet, Leon Tan and Erik Jakubowski  
+
+# Are You Making Enough to Survive?
+This is a visualization that tells a story based on Median Household Income and Cost of Living across the United States using Charts/ GeoJson mapping bulit different JavaScript Libaries (D3, ChartJs & Plotly). 
+
+# Problem Statement:
+Based on the living location with a given annual income are people making enough money, are they able to save after their needs? 
+
+# Visualizing Median Household Income vs Cost of Living through a GeoJson mapping-format (via color concentration in each state).
+This Web Application leverages:
+- Python Flask app to return data stored in a json format, with each route defined to render data for specific Charts
+- Store Data in MySQL database (same data being retrived with Flask Api), 
+- HTHL to visually render the data in the browser with Javascript
+
+Team work with Ruth Ineh, Evan Ouimet, Leon Tan and Erik Jakubowski.
 
 # Running the Application  
 Its hosted on a Flask server  
